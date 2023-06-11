@@ -1,0 +1,11 @@
+* pip install virtualenv
+* python -m virtualenv venv
+* venv\Scripts\activate
+* deactivate
+* pip install django
+* django-admin startproject sistema .
+* python manage.py createsuperuser
+* python manage.py runserver
+* python manage.py startapp tasks
+* python manage.py makemigrations
+* python manage.py migrate
