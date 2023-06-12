@@ -4,8 +4,56 @@
 * deactivate
 * pip install django
 * django-admin startproject sistema .
-* python manage.py createsuperuser
 * python manage.py runserver
-* python manage.py startapp tasks
+* python manage.py startapp libreria
+        *** settings.py
+             INSTALLED_APPS = [
+                'django.contrib.admin',
+                'django.contrib.auth',
+                'django.contrib.contenttypes',
+                'django.contrib.sessions',
+                'django.contrib.messages',
+                'django.contrib.staticfiles',
+                'libreria', # se añade la aplicacion creada
+
+
+        *** views.py
+                from django.shortcuts import render
+                from django.http import HttpResponse
+
+                # Create your views here.
+
+
+                def inicio(request):
+                    return HttpResponse("<h1>Bienvenidos Develoteca</h1>")
+
+
+        *** libreria
+                urls.py
+                    from django.urls import path
+                    from . import views
+
+                    urlpatterns = [
+                        path('', views.inicio, name='inicio'),
+                   ]
+
+        *** libreria
+                urls.py
+                    from django.contrib import admin
+                    from django.urls import path
+                    from django.urls import include
+
+
+                    urlpatterns = [
+                        path('admin/', admin.site.urls),
+                        path('', include('libreria.urls'))
+]
+
+* pip install PyMySQL
+* pip install Pillow
+* python manage.py createsuperuser
 * python manage.py makemigrations
 * python manage.py migrate
+
+
+        
