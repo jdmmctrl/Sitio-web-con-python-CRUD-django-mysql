@@ -76,13 +76,21 @@ WSGI_APPLICATION = 'sistema.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'libreria',
-        'USER': 'ctrladmin',
-        'PASSWORD': 'a63dad068e',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'USER': 'Django',
+        'PASSWORD': 'Django1234',
+        'HOST': 'localhost',  # si tienes otra dirección host debes remplazar esta
+        'PORT': ''  # si lo dejas vacío tomara el puerto por default
     }
+    #    'default': {
+    #        'ENGINE': 'django.db.backends.mysql',
+    #        'NAME': 'libreria',
+    #       'USER': 'root',
+    #       'PASSWORD': 'a63dad068e',
+    #       'HOST': 'localhost',
+    #       'PORT': '3306',
+    #    }
 }
 
 
